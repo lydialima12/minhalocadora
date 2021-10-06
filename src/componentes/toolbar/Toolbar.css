@@ -2,8 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 .toolbar {
-    height: 100px;
+    height: 110px;
     background-color: #1fb6ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logotipo {
@@ -13,7 +16,4 @@
     margin: 0px 50px;
 }
 
-.hamburguer {
-    margin: 0px 20px;
-    border: none;    
-}
+

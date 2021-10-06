@@ -1,13 +1,14 @@
-import './App.css';
-// import { Button } from 'reactstrap';
-import  Toolbar  from './componentes/toolbar/Toolbar'
+import "./App.css";
+import Toolbar from "./componentes/toolbar/Toolbar";
+import Banner from "./componentes/banner/Banner";
+import Footer from "./componentes/footer/Footer";
 
 function App(props) {
   return (
     <div className="App">
-      {/* <p>Olá mundo</p> */}
-      {/* <Button color="danger">Danger!</Button> */}
       <Toolbar />
+      <Banner />
+      <Footer />
     </div>
   );
 }
