@@ -1,0 +1,19 @@
+/* Import de fonte */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+.toolbar {
+    height: 100px;
+    background-color: #1fb6ff;
+}
+
+.logotipo {
+    font-family: 'Pacifico', cursive;
+    font-size: 30px;
+    color: white !important;
+    margin: 0px 50px;
+}
+
+.hamburguer {
+    margin: 0px 20px;
+    border: none;    
+}

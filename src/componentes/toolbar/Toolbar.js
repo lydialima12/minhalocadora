@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import logo from '../../assets/filmflix.png';
+import './Toolbar.css'
+// import logo from '../../assets/filmflix.png';
 import {
     Collapse,
     Navbar,
@@ -8,10 +9,6 @@ import {
     Nav,
     NavItem,
     NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
     NavbarText
 } from 'reactstrap';
 
@@ -23,38 +20,19 @@ const Example = (props) => {
 
     return (
         <div>
-            <Navbar color="dark" light expand="md">
-                <NavbarBrand href="/">reactstrap</NavbarBrand>
-                <NavbarToggler onClick={toggle} />
-                <Collapse isOpen={isOpen} navbar>
-                    <Nav className="mr-auto" navbar>
+            <Navbar className="toolbar" light expand="md" justify-content-end>
+                <NavbarBrand className="logotipo" href="/">videTv</NavbarBrand>
+                <NavbarToggler className="hamburguer" onClick={toggle} />
+                <Collapse isOpen={isOpen} navbar >
+                    <Nav className="mt-auto" navbar >
                         <NavItem>
-                            <NavLink href="/components/">Components</NavLink>
+                            <NavLink href="">Cadastrar</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+                            <NavLink href="">Listar</NavLink>
                         </NavItem>
-                        <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret>
-                                Options
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem>
-                                    Option 1
-                                </DropdownItem>
-                                <DropdownItem>
-                                    Option 2
-                                </DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem>
-                                    Reset
-                                </DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
                     </Nav>
-                    <NavbarText>Simple Text</NavbarText>
                 </Collapse>
-                <img src={logo} />
             </Navbar>
         </div>
     );
