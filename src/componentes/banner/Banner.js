@@ -2,7 +2,10 @@ import React from "react";
 import { Jumbotron, Button } from "reactstrap";
 import "./Banner.css";
 
-import teste from "./../../assets/incriveis2.png";
+// import Botao from '../botao/Botao';
+
+
+import imagem from "./../../assets/incriveis2.png";
 
 function Banner() {
   return (
@@ -18,6 +21,7 @@ function Banner() {
             ou notebook sem pagar nada por isso.
           </p>
           <section className="botoes">
+            {/* <Botao title="Cadastrar" /> */}
             <Button className="btnPrimario">Cadastrar</Button>
             <Button className="btnSecundario">Listar</Button>
           </section>
@@ -27,7 +31,7 @@ function Banner() {
         <section className="divImagem">
           <img
             className="divImagem"
-            src={teste}
+            src={imagem}
             alt="Imagens dos super-herois 'os incríveis'."
             title="Os Incríveis"
           />
