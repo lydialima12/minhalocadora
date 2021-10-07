@@ -17,9 +17,10 @@ function Banner() {
             e compartilhar. Acompanhe as novidades no celular, tablet, Smart TV
             ou notebook sem pagar nada por isso.
           </p>
-          <p className="lead">
+          <section className="botoes">
             <Button className="btnPrimario">Cadastrar</Button>
-          </p>
+            <Button className="btnSecundario">Listar</Button>
+          </section>
         </section>
       </Jumbotron>
       <Jumbotron className="divImagem">
