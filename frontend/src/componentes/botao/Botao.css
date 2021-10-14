@@ -1,0 +1,35 @@
+.btnPrimario {
+    height: 54px;
+    width: 200px;
+    border-radius: 50px;
+    background-color: #db5800;
+    border: none;
+    margin-right: 10px;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px;
+    color: white;
+
+}
+
+.btnPrimario:hover {
+    background-color: rgb(207, 70, 7);
+    border: 1px solid tomato;
+}
+
+.btnSecundario {
+    height: 54px;
+    width: 200px;
+    border-radius: 50px;
+    border: 1px solid #db5800 !important;
+    background-color: transparent;
+    color: #db5800;
+    border: none;
+    margin-right: 10px;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px;
+}
+
+.btnSecundario:hover {
+    background-color: rgb(207, 70, 7);
+    border: 1px solid tomato;
+}

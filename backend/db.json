@@ -1,0 +1,16 @@
+{
+  "filmes": [
+    {
+      "nome": "Harry Potter",
+      "lancamento": "2001",
+      "diretor": "Chris Columbus",
+      "id": 1
+    },
+    {
+      "nome": "Senhor dos Aneis",
+      "lancamento": "2002",
+      "diretor": "Peter Jackson",
+      "id": 2
+    }
+  ]
+}

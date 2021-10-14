@@ -1,13 +1,13 @@
 import "./App.css";
 import Toolbar from "./componentes/toolbar/Toolbar";
-import Banner from "./componentes/banner/Banner";
 import Footer from "./componentes/footer/Footer";
+import Routes from "./rotas/rotas";
 
-function App(props) {
+function App() {
   return (
     <div className="App">
       <Toolbar />
-      <Banner />
+      <Routes />
       <Footer />
     </div>
   );
