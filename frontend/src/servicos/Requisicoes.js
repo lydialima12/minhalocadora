@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // Armazenando o endereço da API
-const apiUrl = "http://localhost:3001/filmes"
+const apiUrl = "http://localhost:3001"
 
 const requisicoes = {
 
@@ -12,10 +12,10 @@ const requisicoes = {
     },
 
     // Função para recuperar dados de um post específico
-    async getOne(filmeId){
-        const enpoint = apiUrl + "/filme/" + filmeId
-        return axios.get(enpoint)
-    },
+    // async getOne(filmeId){
+    //     const enpoint = apiUrl + "/filme/" + filmeId
+    //     return axios.get(enpoint)
+    // },
 
     // Função para criar um novo post
     // async create(data){

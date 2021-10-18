@@ -3,89 +3,73 @@
 // import Botao from "../botao/Botao";
 // import { Link } from "react-router-dom";
 
+// //Import do axios para fazer as chamadas à api
+// import api from "../../servicos/api";
+// import { useEffect, useState } from "react";
+
 // export function Lista() {
-//   return (
-//     <div className="containerCadastrar">
-//       <h1>Lista de filmes</h1>
-//       <Link to="/">
-//         <Botao title="voltar" />
-//       </Link>
-//     </div>
-//   );
+//     const [filme, setFilme] = useState();
+
+//     useEffect(() => {
+//         api.get("/filmes/2").then((resposta) => setFilme(resposta.data)).catch((err) => {
+//             console.error("Não foi possível carregar os filmes", + err);
+//         })
+//     }, []);
+
+//     return (
+//         <main>
+
+//             <div className="containerCadastrar">
+//                 <h1>Lista de filmes</h1>
+//                 <Link to="/">
+//                     <Botao title="voltar" />
+//                 </Link>
+//             </div>
+//             <div>
+//                 <p>Filme: {filme?.nome}</p>
+//                 <p>Lançamento: {filme?.lancamento}</p>
+//             </div>
+//         </main>
+//     );
 // }
 
 // export default Lista;
 
+import React, { Component } from 'react';
+import api from '../../servicos/api';
 
+class Lista extends Component {
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import requisicoes from '../../servicos/Requisicoes';
-import './Lista.css';
+  state = {
+    filmes: [],
+  }
 
-class PostListPage extends React.Component {
+  async componentDidMount() {
+    const response = await api.get('filmes');
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            // Atributo para armazenar o array de posts vindos da API.
-            filmes: [],
-        }
-    }
+    this.setState({ filmes: response.data });
+  }
 
-    // Função que é executada assim que o componente carrega.
-    componentDidMount() {
-        this.loadFilmes()
-    }
+  render() {
 
-    // Função responsável por chamar o serviço e carregar os posts.
-    async loadFilmes() {
-        try {
-            let res = await requisicoes.list()
-            this.setState({ filmes: res.data.data })
-        } catch (error) {
-            console.log(error);
-            alert("Não foi possível listar os filmes.")
-        }
-    }
+    const { filmes } = this.state;
 
-    render() {
+    return (
+      <div>
+        <h1>Listar os Filmes</h1>
+        {filmes.map(filme => (
+          <li key={filmes?.id}>
+            <h2>
+              <strong>Título: </strong>
+              {filme?.nome}
+            </h2>
+            <h2>Lançamento: {filme?.lancamento}</h2>
 
-        return (
-            <div className="container">
+          </li>
+        ))}
+      </div>
+    );
+  };
+};
 
-                <div className="page-top">
-                    <div className="page-top__title">
-                        <h2>Filmes</h2>
-                        <p>Listagem dos filmes</p>
-                    </div>
-                    <div className="page-top__aside">
-                        <button className="btn btn-primary" onClick={() => this.props.history.push('/post-add')}>
-                            Adicionar
-                        </button>
-                    </div>
-                </div>
-
-                {/* Percorrendo o array de posts do state e renderizando cada um
-                dentro de um link que leva para a página de detalhes do post específico */}
-                {/* {this.state.filmes.map(post => (
-                    <Link to={"/post-detail/" + filme.id} key={filme.id}>
-                        <div className="post-card">
-                            <div className="post-card__img">
-                                <img src={post.imageUrl}/>
-                            </div>
-                            <div className="post-card__text">
-                                <h4>{post.title}</h4>
-                                <p>{post.content}</p>
-                            </div>
-                        </div>
-                    </Link>
-                ))} */}
-
-            </div>
-        )
-    }
-
-}
-
-export default PostListPage;
+export default Lista;
