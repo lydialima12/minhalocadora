@@ -20,7 +20,8 @@ const requisicoes = {
     // Função para criar um novo post
     // async create(data){
     //     const enpoint = apiUrl + "/posts"
-    //     return axios.post(enpoint, data)
+    //     return axios.post(enpoint, dat
+    a)
     // },
 
     // Função para editar um post específico
