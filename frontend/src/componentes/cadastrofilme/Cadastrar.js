@@ -77,7 +77,7 @@ function Cadastrar() {
     // resolver: yupResolver(validationPost)
   })
 
-  const addFilme = data => axios.post("http://localhost:3001/filmes", data)
+  const addFilme = data => axios.post("https://api-minha-locadora.herokuapp.com/filmes", data)
     .then(() => {
       console.log("Deu tudo certo")
       alert("Pegou! Você será redirecionado para a home")
