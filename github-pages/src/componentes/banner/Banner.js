@@ -3,9 +3,10 @@ import { Jumbotron, Button } from "reactstrap";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import Botao from "../botao/Botao";
 
+
 import "./Banner.css";
 
-import teste from "./../../assets/incriveis2.png";
+import img from "./../../assets/incriveis2.png";
 
 function Banner() {
   return (
@@ -38,7 +39,7 @@ function Banner() {
           <section className="divImagem">
             <img
               className="divImagem"
-              src={teste}
+              src={img}
               alt="Imagens dos super-herois 'os incríveis'."
               title="Os Incríveis"
             />
