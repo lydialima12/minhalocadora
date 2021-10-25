@@ -2,15 +2,11 @@ import React from "react";
 import { Jumbotron, Button } from "reactstrap";
 import { BrowserRouter as Router, Link } from "react-router-dom";
 import Botao from "../botao/Botao";
-
-
 import "./Banner.css";
-
 import img from "./../../assets/incriveis2.png";
 
 function Banner() {
   return (
-    
       <div className="banner">
         <Jumbotron className="divisao">
           <section className="">

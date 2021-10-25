@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: row;
     margin: 0px 150px;
-    /* background-color: tomato; */
 }
 
 .containerFilme {
@@ -30,4 +29,22 @@
 
     font-size: 20px;
     font-family: 'Poppins', sans-serif !important;
+}
+
+.acoes {
+    display: flex;
+    flex-direction: row;
+  
+}
+
+.btnEditar {
+    color: #161616;
+    font-size: 20px;
+    margin: 30px 0px;
+}
+
+.btnApagar {
+    color: rgb(214, 45, 45);
+    font-size: 20px;
+    margin: 30px 10px;
 }

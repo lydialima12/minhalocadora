@@ -1,46 +1,15 @@
-// import React from "react";
 import "./Lista.css";
 import { Link } from "react-router-dom";
 import Botao from "../botao/Botao";
-// import { Container, Row, Col } from 'reactstrap';
-
-
-// //Import do axios para fazer as chamadas à api
-// import api from "../../servicos/api";
-// import { useEffect, useState } from "react";
-
-// export function Lista() {
-//     const [filme, setFilme] = useState();
-
-//     useEffect(() => {
-//         api.get("/filmes/2").then((resposta) => setFilme(resposta.data)).catch((err) => {
-//             console.error("Não foi possível carregar os filmes", + err);
-//         })
-//     }, []);
-
-//     return (
-//         <main>
-
-//             <div className="containerCadastrar">
-//                 <h1>Lista de filmes</h1>
-//                 <Link to="/">
-//                     <Botao title="voltar" />
-//                 </Link>
-//             </div>
-//             <div>
-//                 <p>Filme: {filme?.nome}</p>
-//                 <p>Lançamento: {filme?.lancamento}</p>
-//             </div>
-//         </main>
-//     );
-// }
-
-// export default Lista;
-
 import React, { Component } from 'react';
 import api from '../../servicos/api';
+import { AiOutlineEdit } from "react-icons/ai";
+import { MdDeleteOutline } from "react-icons/md";
+import axios from "axios";
+
 
 class Lista extends Component {
+
 
   state = {
     filmes: [],
@@ -48,23 +17,30 @@ class Lista extends Component {
 
   async componentDidMount() {
     const response = await api.get('filmes');
-
     this.setState({ filmes: response.data });
   }
 
-  render() {
 
+
+
+  render() {
     const { filmes } = this.state;
 
+    function apagarFilme(id) {
+      // const  [filmes, setFilmes] = useState([]);
+      axios.delete(`https://api-minha-locadora.herokuapp.com/filmes/${id}`);
+      // setFilmes(filmes.filter(filme => filme._id !== id));
+    }
+
     return (
-      <main>
+      <div>
         <div>
           <h1>Listar os Filmes</h1>
           <Link to="/">
             <Botao title="voltar" />
           </Link>
         </div>
-        <section className="containerLista">
+        <div className="containerLista">
           {filmes.map(filme => (
             <div className="containerFilme">
               <li className="listaFilme" key={filmes?.id}>
@@ -73,12 +49,18 @@ class Lista extends Component {
                 </h2>
                 <h2 className="lancamento">Lançamento: {filme?.lancamento}</h2>
                 <h2 className="diretor">Diretor: {filme?.diretor}</h2>
+                <div className="acoes">
+                  {/* <Botao title="editar" /> */}
+                  {/* <Botao onClick={apagar(filme._id)} title="excluir" /> */}
 
+                  <h3 className="btnEditar"><AiOutlineEdit /> editar</h3>
+                  <h3 className="btnApagar" onClick={() => apagarFilme(filmes._id)}><MdDeleteOutline /> excluir</h3>
+                </div>
               </li>
             </div>
           ))}
-        </section>
-      </main>
+        </div>
+      </div>
     );
   };
 };
