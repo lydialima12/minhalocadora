@@ -1,10 +1,15 @@
+.containerCadastro {
+    height: 73vh;
+}
+
 .tituloCadastrar {
     font-size: 'Poppins', sans-serif !important;
     margin: 50px 0px 50px 150px;
 }
 
 .labelCadastrar {
-    font-family: 'Poppins', sans-serif !important;;
+    font-family: 'Poppins', sans-serif !important;
+    margin: 10px 0px;
 }
 
 input {
@@ -15,10 +20,6 @@ input {
     height: 44px;
     outline: 0;
     padding: 0px 15px;
-}
-
-label {
-    margin: 10px 0px;
 }
 
 .inputs {
@@ -34,4 +35,15 @@ label {
     color: rgb(226, 46, 46);
     font-family: 'Poppins', sans-serif !important;
     font-weight: 500;
+}
+
+@media (min-width: 600px) and (max-width: 800px) { 
+    .tituloCadastrar {
+        margin: 50px 0px 50px 80px;
+    }
+
+    .containerFormulario {
+        margin: 50px 80px;
+    }
+
 }

@@ -5,7 +5,7 @@ import { Navbar, NavbarBrand } from "reactstrap";
 function Toolbar () {
   return (
     <div>
-      <Navbar className="toolbar" light expand="md" justify-content-end>
+      <Navbar className="toolbar" light expand="md" justify-content-end="true">
         <NavbarBrand className="logotipo" href="/">
           videTv
         </NavbarBrand>

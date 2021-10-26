@@ -1,0 +1,22 @@
+.rodape {
+    height: 100px;
+    background-color: #0080c0;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media (max-width: 400px) {
+    .rodape {
+        height: 80px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 900px) {
+    .rodape {
+        height: 80px;
+    }
+}

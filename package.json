@@ -1,7 +1,6 @@
 {
   "name": "minhalocadora",
   "version": "0.1.0",
-  "homepage": "https://lydialima12.github.io/minhalocadora/",
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^2.8.2",
