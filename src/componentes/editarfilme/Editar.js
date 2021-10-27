@@ -51,11 +51,10 @@ function Editar() {
     useEffect(() => {
         axios.get(`https://api-minha-locadora.herokuapp.com/filmes/${id}`)
             .then((response) => {
-                console.log('passou no useEfect');
                 reset(response.data)
             })
 
-    }, )
+    }, [id,reset])
 
     return (
         <div className="containerCadastro">
