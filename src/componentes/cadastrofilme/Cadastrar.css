@@ -1,7 +1,3 @@
-.containerCadastro {
-    height: 73vh;
-}
-
 .tituloCadastrar {
     font-size: 'Poppins', sans-serif !important;
     margin: 50px 0px 50px 150px;
@@ -11,6 +7,19 @@
     font-family: 'Poppins', sans-serif !important;
     margin: 10px 0px;
 }
+
+.btnVoltar {
+    height: 54px;
+    width: 200px;
+    border-radius: 50px;
+    background-color: #1fb6ff !important;
+    border: none;
+    margin-right: 10px;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px;
+    color: white;
+}
+
 
 input {
     border-color: #1fb6ff;
@@ -37,6 +46,8 @@ input {
     font-weight: 500;
 }
 
+
+/* Media */
 @media (min-width: 600px) and (max-width: 800px) { 
     .tituloCadastrar {
         margin: 50px 0px 50px 80px;
@@ -46,4 +57,53 @@ input {
         margin: 50px 80px;
     }
 
+    input {
+        width: 450px;
+
+    }
+}
+
+@media (min-width: 400px) and (max-width: 599px) { 
+    .tituloCadastrar {
+        margin: 50px 0px 50px 40px;
+    }
+
+    .containerFormulario {
+        margin: 50px 40px;
+    }
+
+    input {
+        width: 350px;
+
+    }
+}
+
+@media (min-width: 300px) and (max-width: 399px) { 
+    .tituloCadastrar {
+        margin: 50px 0px 50px 20px;
+    }
+
+    .containerFormulario {
+        margin: 50px 20px;
+    }
+
+    input {
+        width: 250px;
+
+    }
+}
+
+@media (max-width: 299px) { 
+    .tituloCadastrar {
+        margin: 50px 0px 50px 10px;
+    }
+
+    .containerFormulario {
+        margin: 50px 10px;
+    }
+
+    input {
+        width: 200px;
+
+    }
 }

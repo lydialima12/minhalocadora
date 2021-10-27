@@ -4,6 +4,7 @@ import { Route, BrowserRouter, Switch } from "react-router-dom";
 import Home from "../componentes/home/Home";
 import Lista from "../componentes/listafilmes/Lista";
 import Cadastrar from "../componentes/cadastrofilme/Cadastrar";
+import Editar from "../componentes/editarfilme/Editar";
 
 const Routes = () => {
   return (
@@ -13,6 +14,7 @@ const Routes = () => {
         <Route exact component={Home} path="/" />
         <Route component={Lista} path="/listadefilmes" />
         <Route component={Cadastrar} path="/cadastrarfilme" />
+        <Route component={Editar} path="/filmes/:id"  />
       </Switch>
     </BrowserRouter>
   );

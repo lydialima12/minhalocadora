@@ -38,7 +38,7 @@ function Cadastrar() {
       <div className="tituloCadastrar">
         <h1>Cadastrar filme</h1>
         <Link to="/">
-          <Botao title="voltar" />
+          <Botao className="btnVoltar" title="voltar" />
         </Link>
       </div>
       <section className="containerFormulario">

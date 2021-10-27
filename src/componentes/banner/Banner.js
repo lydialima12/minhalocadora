@@ -11,9 +11,8 @@ function Banner() {
       <Jumbotron className="divisao">
         <section>
           <h1 className="titulo">
-            Cadastre seus filmes, séries e muito mais.
+            Cadastre grátis seus filmes, séries e muito mais.
           </h1>
-          <h1 className="titulo">É grátis!</h1>
           <h2 className="subtitulo">Cadaste de onde quiser.</h2>
           <p className="textoApoio">
             Salve seus títulos favoritos e sempre tenha sua lista para

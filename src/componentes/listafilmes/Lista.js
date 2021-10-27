@@ -2,7 +2,7 @@ import "./Lista.css";
 
 import { Link } from "react-router-dom";
 import Botao from "../botao/Botao";
-import React, { Component, useState} from 'react';
+import React, { Component, useState } from 'react';
 import api from '../../servicos/api';
 import { AiOutlineEdit } from "react-icons/ai";
 import { MdDeleteOutline } from "react-icons/md";
@@ -22,7 +22,7 @@ class Lista extends Component {
   }
 
   teste = {
-    bola:''
+    bola: ''
   }
 
 
@@ -37,7 +37,7 @@ class Lista extends Component {
 
 
   render() {
-    const { filmes } = this.state;    
+    const { filmes } = this.state;
 
     let filmeObj = {
       nome: 'ana',
@@ -61,7 +61,7 @@ class Lista extends Component {
     }
 
     function carregarDadosEditar(filme) {
-      filmeObj = filme;      
+      filmeObj = filme;
       console.log(filmeObj.nome);
     }
 
@@ -69,7 +69,7 @@ class Lista extends Component {
 
     return (
       <div>
-        <div>
+        <div className="containerTitulo">
           <h1>Listar os Filmes</h1>
           <Link to="/">
             <Botao title="voltar" />
@@ -86,16 +86,19 @@ class Lista extends Component {
                 <h2 className="diretor">Diretor: {filme?.diretor}</h2>
                 <div className="acoes">
                   {/* <Botao title="editar" /> */}
-                  {/* <Botao onClick={apagar(filme._id)} title="excluir" /> */}
+                  {/* <Botao onClick={() => apagarFilme(filme.id)} title="excluir" /> */}
 
-                  <h3 className="btnEditar" onClick={() => carregarDadosEditar(filme)}><AiOutlineEdit /> editar</h3>
+                  <Link to={{ pathname: `/filmes/${filme.id}` }} >
+                    <h3 className="btnEditar"><AiOutlineEdit />editar</h3>
+                    {/* <button>Edit</button> */}
+                  </Link>
                   <h3 className="btnApagar" onClick={() => apagarFilme(filme.id)}><MdDeleteOutline /> excluir</h3>
                 </div>
               </li>
             </div>
           ))}
         </div>
-        <input type="text" value={filmeObj.nome} />
+        {/* <input type="text" value={filmeObj.nome} /> */}
       </div>
     );
   };
