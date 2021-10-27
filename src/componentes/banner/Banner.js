@@ -1,6 +1,6 @@
 import React from "react";
-import { Jumbotron, Button } from "reactstrap";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Jumbotron} from "reactstrap";
+import {  Link } from "react-router-dom";
 import Botao from "../botao/Botao";
 import "./Banner.css";
 import img from "./../../assets/incriveis2.png";

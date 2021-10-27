@@ -6,7 +6,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Swal from 'sweetalert2'
 
@@ -55,7 +55,7 @@ function Editar() {
                 reset(response.data)
             })
 
-    }, [])
+    }, )
 
     return (
         <div className="containerCadastro">
