@@ -7,6 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import './Cadastrar.css';
 import { BrowserRouter as Router, Link } from "react-router-dom";
+import Swal from 'sweetalert2';
 
 
 const validacaoFormulario = yup.object().shape({
@@ -26,8 +27,14 @@ function Cadastrar() {
 
   const addFilme = data => axios.post("https://api-minha-locadora.herokuapp.com/filmes", data)
     .then(() => {
-      alert("Cadastro realizado! Você será redirecionado para a home.")
-      history.push("/")
+      Swal.fire({
+        title: 'Cadastrado!',
+        html: 'Seu vídeo foi cadastrado com sucesso!',
+        icon: 'success',
+        confirmButtonColor: '#0080c0',
+        timer: 4000
+        });  
+      history.push("/listadefilmes")
     })
     .catch(() => {
       alert("Algo de errado aconteceu! Por favor tente mais tarde.")

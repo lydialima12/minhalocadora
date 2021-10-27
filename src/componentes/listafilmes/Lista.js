@@ -1,21 +1,24 @@
 import "./Lista.css";
 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Botao from "../botao/Botao";
 import React, { Component, useState } from 'react';
 import api from '../../servicos/api';
 import { AiOutlineEdit } from "react-icons/ai";
 import { MdDeleteOutline } from "react-icons/md";
 import axios from "axios";
+import Swal from 'sweetalert2';
 
 function atualizarPagina() {
-  window.location.reload(true);
-
+  //window.location.reload(true);
+  window.location.assign("https://thirsty-easley-928334.netlify.app/listadefilmes");  
 }
 
 
-class Lista extends Component {
 
+class Lista extends Component {
+  
+  
 
   state = {
     filmes: [],
@@ -50,20 +53,18 @@ class Lista extends Component {
 
     function apagarFilme(id) {
       axios.delete(`https://api-minha-locadora.herokuapp.com/filmes/${id}`);
-      alert("Seu vídeo foi apagado");
-      atualizarPagina();
-    }
+      Swal.fire({
 
-    function editarFilme(id) {
-      axios.put(`https://api-minha-locadora.herokuapp.com/filmes/${id}`);
-      alert("Seu vídeo foi editado");
-      atualizarPagina();
+        title: 'Excluído!',
+        html: 'Seu vídeo foi excluído com sucesso!',
+        icon: 'success',
+        confirmButtonColor: '#0080c0',
+        timer: 4000
+        }).then(()=>{
+          atualizarPagina();
+        });      
     }
-
-    function carregarDadosEditar(filme) {
-      filmeObj = filme;
-      console.log(filmeObj.nome);
-    }
+    
 
 
 
